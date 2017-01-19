@@ -13,9 +13,11 @@
     tools:context="com.acme.tictactoe.controller.TicTacToeActivity">
 
     <GridLayout
+        android:id="@+id/buttonGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="3" android:rowCount="3">
+        android:columnCount="3"
+        android:rowCount="3">
 
         <Button
             android:tag="00"
@@ -74,8 +76,8 @@
     </GridLayout>
 
     <LinearLayout
-        android:id="@+id/winnerLabels"
-        android:layout_width="match_parent"
+        android:id="@+id/winnerPlayerViewGroup"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
