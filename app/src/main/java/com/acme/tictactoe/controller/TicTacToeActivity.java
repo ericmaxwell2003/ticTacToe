@@ -57,17 +57,6 @@ public class TicTacToeActivity extends AppCompatActivity {
         }
     }
 
-    public void reset() {
-        winnerPlayerViewGroup.setVisibility(View.GONE);
-        winnerPlayerLabel.setText("");
-
-        gameBoard.restart();
-
-        for( int i = 0; i < buttonGrid.getChildCount(); i++ ) {
-            ((Button) buttonGrid.getChildAt(i)).setText("");
-        }
-    }
-
     public void onCellClicked(View v) {
 
         Button button = (Button) v;
@@ -88,4 +77,16 @@ public class TicTacToeActivity extends AppCompatActivity {
         }
 
     }
+
+    private void reset() {
+        winnerPlayerViewGroup.setVisibility(View.GONE);
+        winnerPlayerLabel.setText("");
+
+        gameBoard.restart();
+
+        for( int i = 0; i < buttonGrid.getChildCount(); i++ ) {
+            ((Button) buttonGrid.getChildAt(i)).setText("");
+        }
+    }
+
 }
