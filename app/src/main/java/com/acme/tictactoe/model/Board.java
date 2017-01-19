@@ -22,6 +22,7 @@ public class Board {
      */
     public void restart() {
         clearCells();
+        winner = null;
         currentTurn = Player.X;
         state = GameState.IN_PROGRESS;
     }
