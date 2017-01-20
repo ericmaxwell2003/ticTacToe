@@ -35,7 +35,7 @@ public class TicTacToePresenterTests {
     }
 
     /**
-     * This test will simulate and verify x is the winner.
+     * This test will simulate and verify o is the winner.
      *
      *    X | X | X
      *    O |   |
