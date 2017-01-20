@@ -1,7 +1,5 @@
 package com.acme.tictactoe.model;
 
-import android.os.Build;
-
 import org.junit.Before;
 import org.junit.Test;
 

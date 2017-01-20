@@ -1,7 +1,6 @@
-package com.acme.tictactoe.presenter;
+package com.acme.tictactoe.viewmodel;
 
-
-public interface Presenter {
+public interface ViewModel {
 
     void onCreate();
     void onPause();

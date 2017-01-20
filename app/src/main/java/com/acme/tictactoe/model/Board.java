@@ -59,6 +59,10 @@ public class Board {
         return playerThatMoved;
     }
 
+    public Player valueAtCell(int row, int col) {
+        return cells[row][col].getValue();
+    }
+
     public Player getWinner() {
         return winner;
     }
