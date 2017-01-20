@@ -1,7 +1,5 @@
 package com.acme.tictactoe.presenter;
 
-import android.widget.Button;
-
 import com.acme.tictactoe.model.Board;
 import com.acme.tictactoe.model.Player;
 import com.acme.tictactoe.view.TicTacToeView;
