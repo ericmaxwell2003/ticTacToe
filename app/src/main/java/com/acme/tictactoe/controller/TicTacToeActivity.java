@@ -1,6 +1,5 @@
 package com.acme.tictactoe.controller;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,20 +9,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.acme.tictactoe.R;
 import com.acme.tictactoe.model.Board;
 import com.acme.tictactoe.model.Player;
 
-import org.w3c.dom.Text;
-
 public class TicTacToeActivity extends AppCompatActivity {
 
     private static String TAG = TicTacToeActivity.class.getName();
 
-    private Board gameBoard;
+    private Board model;
 
     private ViewGroup buttonGrid;
     private View winnerPlayerViewGroup;
@@ -37,7 +33,7 @@ public class TicTacToeActivity extends AppCompatActivity {
         winnerPlayerViewGroup = findViewById(R.id.winnerPlayerViewGroup);
         buttonGrid = (ViewGroup) findViewById(R.id.buttonGrid);
 
-        gameBoard = new Board();
+        model = new Board();
     }
 
     @Override
@@ -66,11 +62,11 @@ public class TicTacToeActivity extends AppCompatActivity {
         int col = Integer.valueOf(tag.substring(1,2));
         Log.i(TAG, "Click Row: [" + row + "," + col + "]");
 
-        Player playerThatMoved = gameBoard.mark(row, col);
+        Player playerThatMoved = model.mark(row, col);
 
         if(playerThatMoved != null) {
             button.setText(playerThatMoved.toString());
-            if (gameBoard.getWinner() != null) {
+            if (model.getWinner() != null) {
                 winnerPlayerLabel.setText(playerThatMoved.toString());
                 winnerPlayerViewGroup.setVisibility(View.VISIBLE);
             }
@@ -82,7 +78,7 @@ public class TicTacToeActivity extends AppCompatActivity {
         winnerPlayerViewGroup.setVisibility(View.GONE);
         winnerPlayerLabel.setText("");
 
-        gameBoard.restart();
+        model.restart();
 
         for( int i = 0; i < buttonGrid.getChildCount(); i++ ) {
             ((Button) buttonGrid.getChildAt(i)).setText("");
