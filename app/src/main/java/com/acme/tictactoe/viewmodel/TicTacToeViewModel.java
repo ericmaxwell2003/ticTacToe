@@ -10,8 +10,8 @@ public class TicTacToeViewModel implements ViewModel {
 
     private Board model;
 
-    final public ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
-    final public ObservableField<String> winner = new ObservableField<>();
+    public final ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
+    public final ObservableField<String> winner = new ObservableField<>();
 
     public TicTacToeViewModel() {
         model = new Board();
