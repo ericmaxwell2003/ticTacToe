@@ -10,8 +10,8 @@ public class TicTacToeViewModel implements ViewModel {
 
     private Board model;
 
-    private ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
-    private ObservableField<String> winner = new ObservableField<>();
+    final public ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
+    final public ObservableField<String> winner = new ObservableField<>();
 
     public TicTacToeViewModel() {
         model = new Board();
@@ -49,11 +49,4 @@ public class TicTacToeViewModel implements ViewModel {
         winner.set(model.getWinner() == null ? null : model.getWinner().toString());
     }
 
-    public ObservableArrayMap<String, String> getCells() {
-        return cells;
-    }
-
-    public ObservableField<String> getWinner() {
-        return winner;
-    }
 }

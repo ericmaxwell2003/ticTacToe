@@ -23,7 +23,7 @@ public class TicTacToeViewModelTests {
 
     private void clickAndAssertValueAt(int row, int col, String expectedValue) {
         viewModel.onClickedCellAt(row, col);
-        assertEquals(expectedValue, viewModel.getCells().get("" + row + col));
+        assertEquals(expectedValue, viewModel.cells.get("" + row + col));
     }
 
     /**
@@ -37,19 +37,19 @@ public class TicTacToeViewModelTests {
     public void test3inRowAcrossTopForX() {
 
         clickAndAssertValueAt(0,0, "X");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(1,0, "O");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(0,1, "X");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(2,1, "O");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(0,2, "X");
-        assertEquals("X", viewModel.getWinner().get());
+        assertEquals("X", viewModel.winner.get());
 
     }
 
@@ -65,22 +65,22 @@ public class TicTacToeViewModelTests {
     public void test3inRowDiagonalFromTopLeftToBottomForO() {
 
         clickAndAssertValueAt(0,1, "X");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(0,0, "O");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(2,1, "X");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(1,1, "O");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(0,2, "X");
-        assertNull(viewModel.getWinner().get());
+        assertNull(viewModel.winner.get());
 
         clickAndAssertValueAt(2,2, "O");
-        assertEquals("O", viewModel.getWinner().get());
+        assertEquals("O", viewModel.winner.get());
 
     }
 
