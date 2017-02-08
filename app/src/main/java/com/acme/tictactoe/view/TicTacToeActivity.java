@@ -18,7 +18,6 @@ public class TicTacToeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tictactoe);
         TictactoeBinding binding = DataBindingUtil.setContentView(this, R.layout.tictactoe);
         binding.setViewModel(viewModel);
         viewModel.onCreate();
