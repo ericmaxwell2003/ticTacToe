@@ -44,9 +44,12 @@ public class TicTacToeViewModel implements ViewModel {
     }
 
     public void onClickedCellAt(int row, int col) {
-        Player playerThatMoved = model.mark(row, col);
-        cells.put("" + row + col, playerThatMoved == null ? null : playerThatMoved.toString());
-        winner.set(model.getWinner() == null ? null : model.getWinner().toString());
+        String key = "" + row + col;
+        if (!cells.containsKey(key)) {
+            Player playerThatMoved = model.mark(row, col);
+            cells.put(key, playerThatMoved == null ? null : playerThatMoved.toString());
+            winner.set(model.getWinner() == null ? null : model.getWinner().toString());
+        }
     }
 
 }
