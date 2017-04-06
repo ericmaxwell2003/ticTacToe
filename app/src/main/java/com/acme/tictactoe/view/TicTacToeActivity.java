@@ -21,6 +21,10 @@ public class TicTacToeActivity extends AppCompatActivity {
         TictactoeBinding binding = DataBindingUtil.setContentView(this, R.layout.tictactoe);
         binding.setViewModel(viewModel);
         viewModel.onCreate();
+
+        if (savedInstanceState != null) {
+            viewModel.loadFromSavedInstanceState(savedInstanceState);
+        }
     }
 
     @Override
@@ -33,6 +37,13 @@ public class TicTacToeActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         viewModel.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+        viewModel.onSaveInstanceState(outState);
     }
 
     @Override
