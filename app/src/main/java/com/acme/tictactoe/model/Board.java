@@ -1,12 +1,9 @@
 package com.acme.tictactoe.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import static com.acme.tictactoe.model.Player.O;
 import static com.acme.tictactoe.model.Player.X;
 
-public class Board implements Parcelable {
+public class Board {
 
     private Cell[][] cells = new Cell[3][3];
 
@@ -14,57 +11,11 @@ public class Board implements Parcelable {
     private GameState state;
     private Player currentTurn;
 
-    private enum GameState { IN_PROGRESS, FINISHED }
+    private enum GameState { IN_PROGRESS, FINISHED };
 
     public Board() {
         restart();
     }
-
-    private Board(Parcel in)
-    {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                cells[i][j].setValue(Player.fromInt(in.readInt()));
-            }
-        }
-        winner = Player.fromInt(in.readInt());
-        state = (in.readInt() == 0 ? GameState.IN_PROGRESS : GameState.FINISHED);
-        currentTurn = Player.fromInt(in.readInt());
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags)
-    {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                dest.writeInt(cells[i][j].getValue().id);
-            }
-        }
-        dest.writeInt(winner.id);
-        dest.writeInt(state.ordinal());
-        dest.writeInt(currentTurn.id);
-    }
-
-    @Override
-    public int describeContents()
-    {
-        return 0;
-    }
-
-    public static final Creator<Board> CREATOR = new Creator<Board>()
-    {
-        @Override
-        public Board createFromParcel(Parcel in)
-        {
-            return new Board(in);
-        }
-
-        @Override
-        public Board[] newArray(int size)
-        {
-            return new Board[size];
-        }
-    };
 
     /**
      *  Restart or start a new game, will clear the board and win status
