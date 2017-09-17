@@ -10,8 +10,7 @@ Other branches contain the model, plus a User Interface following:
 * *mvvm* - Example of Model View ViewModel with Databinding 
 
 #### Notes
-* This project is the companion project to a post I authored at https://news.realm.io/news/eric-maxwell-mvc-mvp-and-mvvm-on-android/.  
-
+* This project is the companion project to a post I authored at https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/.  
 * It is intended to be a reference to show the concepts of MVC, MVVM, and MVP on Android.  
 
 * This post and project was created before the GoogleIO 2017 announcment of Android [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel.html) and the [Android Architecture Components](https://www.youtube.com/watch?v=vOJCrbr144o), which changes the way we think about ViewModels in the Android Lifecycle.
