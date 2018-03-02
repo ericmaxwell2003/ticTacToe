@@ -1,3 +1,3 @@
 package com.acme.tictactoe.model;
 
-enum Player { X , O }
+public enum Player { X , O }
