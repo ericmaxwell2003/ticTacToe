@@ -1,17 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tictactoe"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
     tools:context="com.acme.tictactoe.controller.TicTacToeActivity">
 
-    <TextView
+    <GridLayout
+        android:id="@+id/buttonGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <Button
+            android:tag="00"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="01"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="02"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="10"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="11"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="12"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="20"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="21"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+        <Button
+            android:tag="22"
+            android:onClick="onCellClicked"
+            style="@style/tictactoebutton"
+            />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/winnerPlayerViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        >
+
+        <TextView
+            android:id="@+id/winnerPlayerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:layout_margin="20dp"
+            tools:text="X" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/winner" />
+
+    </LinearLayout>
+
+</LinearLayout>
