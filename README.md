@@ -1,4 +1,4 @@
-Don't use this change
+Don't use this change. Seriously. 
 # ticTacToe Don't 
 
 A simple tic tac toe app, to illustrate the use of MVC, MVP, and MVVM architectures to organize the application.
