@@ -37,7 +37,7 @@ public class TicTacToePresenter implements Presenter {
     public void onButtonSelected(int row, int col) {
         Player playerThatMoved = model.mark(row, col);
 
-        if(playerThatMoved != null) {
+        if (playerThatMoved != null) {
             view.setButtonText(row, col, playerThatMoved.toString());
 
             if (model.getWinner() != null) {
