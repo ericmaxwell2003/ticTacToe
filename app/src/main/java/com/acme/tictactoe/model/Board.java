@@ -11,14 +11,16 @@ public class Board {
     private GameState state;
     private Player currentTurn;
 
-    private enum GameState { IN_PROGRESS, FINISHED };
+    private enum GameState {IN_PROGRESS, FINISHED}
+
+    ;
 
     public Board() {
         restart();
     }
 
     /**
-     *  Restart or start a new game, will clear the board and win status
+     * Restart or start a new game, will clear the board and win status
      */
     public void restart() {
         clearCells();
@@ -35,18 +37,17 @@ public class Board {
      * @param row 0..2
      * @param col 0..2
      * @return the player that moved or null if we did not move anything.
-     *
      */
-    public Player mark( int row, int col ) {
+    public Player mark(int row, int col) {
 
         Player playerThatMoved = null;
 
-        if(isValid(row, col)) {
+        if (isValid(row, col)) {
 
             cells[row][col].setValue(currentTurn);
             playerThatMoved = currentTurn;
 
-            if(isWinningMoveByPlayer(currentTurn, row, col)) {
+            if (isWinningMoveByPlayer(currentTurn, row, col)) {
                 state = GameState.FINISHED;
                 winner = currentTurn;
 
@@ -64,19 +65,19 @@ public class Board {
     }
 
     private void clearCells() {
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 cells[i][j] = new Cell();
             }
         }
     }
 
-    private boolean isValid(int row, int col ) {
-        if( state == GameState.FINISHED ) {
+    private boolean isValid(int row, int col) {
+        if (state == GameState.FINISHED) {
             return false;
-        } else if( isOutOfBounds(row) || isOutOfBounds(col) ) {
+        } else if (isOutOfBounds(row) || isOutOfBounds(col)) {
             return false;
-        } else if( isCellValueAlreadySet(row, col) ) {
+        } else if (isCellValueAlreadySet(row, col)) {
             return false;
         } else {
             return true;
@@ -94,11 +95,12 @@ public class Board {
 
     /**
      * Algorithm adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/JavaGame_TicTacToe.html
+     *
      * @param player
      * @param currentRow
      * @param currentCol
      * @return true if <code>player</code> who just played the move at the <code>currentRow</code>, <code>currentCol</code>
-     *              has a tic tac toe.
+     * has a tic tac toe.
      */
     private boolean isWinningMoveByPlayer(Player player, int currentRow, int currentCol) {
 

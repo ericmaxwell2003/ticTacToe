@@ -58,6 +58,7 @@ public class TicTacToeActivity extends AppCompatActivity implements TicTacToeVie
         inflater.inflate(R.menu.menu_tictactoe, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -73,8 +74,8 @@ public class TicTacToeActivity extends AppCompatActivity implements TicTacToeVie
 
         Button button = (Button) v;
         String tag = button.getTag().toString();
-        int row = Integer.valueOf(tag.substring(0,1));
-        int col = Integer.valueOf(tag.substring(1,2));
+        int row = Integer.valueOf(tag.substring(0, 1));
+        int col = Integer.valueOf(tag.substring(1, 2));
         Log.i(TAG, "Click Row: [" + row + "," + col + "]");
 
         presenter.onButtonSelected(row, col);
@@ -84,22 +85,25 @@ public class TicTacToeActivity extends AppCompatActivity implements TicTacToeVie
     @Override
     public void setButtonText(int row, int col, String text) {
         Button btn = (Button) buttonGrid.findViewWithTag("" + row + col);
-        if(btn != null) {
+        if (btn != null) {
             btn.setText(text);
         }
     }
 
+    @Override
     public void clearButtons() {
-        for( int i = 0; i < buttonGrid.getChildCount(); i++ ) {
+        for (int i = 0; i < buttonGrid.getChildCount(); i++) {
             ((Button) buttonGrid.getChildAt(i)).setText("");
         }
     }
 
+    @Override
     public void showWinner(String winningPlayerDisplayLabel) {
         winnerPlayerLabel.setText(winningPlayerDisplayLabel);
         winnerPlayerViewGroup.setVisibility(View.VISIBLE);
     }
 
+    @Override
     public void clearWinnerDisplay() {
         winnerPlayerViewGroup.setVisibility(View.GONE);
         winnerPlayerLabel.setText("");
