@@ -90,17 +90,20 @@ public class TicTacToeActivity extends AppCompatActivity implements TicTacToeVie
         }
     }
 
+    @Override
     public void clearButtons() {
         for (int i = 0; i < buttonGrid.getChildCount(); i++) {
             ((Button) buttonGrid.getChildAt(i)).setText("");
         }
     }
 
+    @Override
     public void showWinner(String winningPlayerDisplayLabel) {
         winnerPlayerLabel.setText(winningPlayerDisplayLabel);
         winnerPlayerViewGroup.setVisibility(View.VISIBLE);
     }
 
+    @Override
     public void clearWinnerDisplay() {
         winnerPlayerViewGroup.setVisibility(View.GONE);
         winnerPlayerLabel.setText("");
