@@ -22,16 +22,14 @@ class TicTacToeViewModel(val defaultDispatcher: CoroutineDispatcher = Dispatcher
 
     @ExperimentalCoroutinesApi
     val gameStateLiveData = liveData(defaultDispatcher) {
-        board.gameStatus.consumeEach {
-            emit(it)
+        for(activeGameState in board.gameStatus) {
+            emit(activeGameState)
         }
     }
 
-//    val cells = ObservableArrayMap<String, String?>()
-//    val winner = ObservableField<String?>()
-
     override fun onCleared() {
         super.onCleared()
+        board.shutdown()
     }
 
     fun onResetSelected() {

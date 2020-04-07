@@ -8,5 +8,6 @@ Other branches contain the model, plus a User Interface following:
 * *mvc* - Is an example of using Model View Controller to model the UI / Model Interaction.
 * *mvp* - Example of Model View Presenter
 * *mvvm* - Example of Model View ViewModel with Databinding 
+* *em/nearby* - Example of two player to illustrate the use of the Nearby API
 
 

@@ -59,4 +59,7 @@ class TicTacToeGame(val players: List<Player>) {
                 gameBoard = GameBoard()))
     }
 
+    fun shutdown() {
+        gameStatus.close()
+    }
 }

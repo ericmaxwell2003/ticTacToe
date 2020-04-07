@@ -30,47 +30,47 @@
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(0,0)}"
-                android:text='@{viewModel.cells["00"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(0,0)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(0,1)}"
-                android:text='@{viewModel.cells["01"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(0,1)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(0,2)}"
-                android:text='@{viewModel.cells["02"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(0,2)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(1,0)}"
-                android:text='@{viewModel.cells["10"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(1,0)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(1,1)}"
-                android:text='@{viewModel.cells["11"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(1,1)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(1,2)}"
-                android:text='@{viewModel.cells["12"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(1,2)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(2,0)}"
-                android:text='@{viewModel.cells["20"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(2,0)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(2,1)}"
-                android:text='@{viewModel.cells["21"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(2,1)}' />
 
             <Button
                 style="@style/tictactoebutton"
                 android:onClick="@{() -> viewModel.onClickedCellAt(2,2)}"
-                android:text='@{viewModel.cells["22"]}' />
+                app:player='@{viewModel.gameStateLiveData.gameBoard.playerAt(2,2)}' />
 
         </GridLayout>
 
@@ -80,7 +80,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="@{viewModel.winner != null ? View.VISIBLE : View.GONE}"
+            android:visibility="@{viewModel.gameStateLiveData.winner != null ? View.VISIBLE : View.GONE}"
             tools:visibility="visible">
 
             <TextView
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:textSize="40sp"
-                android:text="@{viewModel.winner}"
+                app:player="@{viewModel.gameStateLiveData.winner}"
                 tools:text="X" />
 
             <TextView
